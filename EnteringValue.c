@@ -1,5 +1,5 @@
-// This is the Dsa logic to enter a certain value at a certain position 
-// Online C compiler to run C program online
+// This is the Dsa logic to enter a certain value at a certain position
+// This happens by aasking user to add a value and a position in which he would like his value to be added to,then later move every value from position i to position i+1 which frees up some space at a specified location/position then after adding it successfully and we will increment the size to increase the number of size by 1      
 #include <stdio.h>
 
 int main() {
