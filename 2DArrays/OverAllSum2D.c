@@ -1,0 +1,47 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Declaring a 5x5 matrix and variables for sum calculations
+    int arr[5][5], sum, totalSum = 0;
+
+    // Taking user input to fill the 5x5 matrix
+    printf("Enter the values of our array:\n");
+    for(int i = 0; i < 5; i++){
+        for(int j = 0; j < 5; j++){
+            scanf("%d", &arr[i][j]);  // Reading each value
+        }
+    }
+
+    // Displaying the entered 5x5 matrix
+    printf("\nThe entered values are: \n");
+    for(int i = 0; i < 5; i++){
+        for(int j = 0; j < 5; j++){
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n"); // New line after each row
+    }
+
+    // Calculating the total sum of all possible 3x3 submatrices
+    printf("\nCalculating the sum of all 3x3 submatrices:\n");
+    for(int i = 0; i <= 5 - 3; i++){      // Row range for 3x3 window
+        for (int j = 0; j <= 5 - 3; j++){ // Column range for 3x3 window
+            sum = 0;  // Reset sum for each new window
+
+            // Calculating the sum of the current 3x3 window
+            for(int x = i; x < i + 3; x++){         
+                for(int y = j; y < j + 3; y++){
+                    sum += arr[x][y]; // Adding each value within the window
+                }
+            }
+
+            // Adding the sum of this 3x3 window to totalSum
+            totalSum += sum;
+            printf("Sum of 3x3 starting at (%d,%d): %d\n", i, j, sum);
+        }
+    }
+
+    // Displaying the total sum of all 3x3 windows
+    printf("\nThe Overall sum of all 3x3 window matrices is: %d\n", totalSum);
+    return 0;
+}
