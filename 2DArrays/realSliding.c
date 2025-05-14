@@ -5,6 +5,8 @@ int main() {
     float maxAvg = -1.0, currentAvg;
     int size = 9; // 3x3 = 9 elements
 
+
+    
     // Taking input for our 5x5 array
     printf("Enter the values of our 5x5 array:\n");
     for (int i = 0; i < 5; i++) {
