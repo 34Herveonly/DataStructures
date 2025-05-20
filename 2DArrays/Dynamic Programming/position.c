@@ -18,7 +18,7 @@ for(int i=2;i<=n;i++){
     // scanf("%d",&fib[i]);
     fib[i]=fib[i-1]+fib[i-2];
 }
-printf("The value at position n is :%d",fib[n]);
+printf("The value at position %d is: %d\n", n, fib[n]);
     return 0;
 }
 }
