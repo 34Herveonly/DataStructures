@@ -14,7 +14,7 @@ int main() {
     printf("%d",a[i]);
     printf("\n");
     }
-    printf("Checking sum");
+    printf("Checking sum \n");
     for(i=0;i<size;i++){
      for(j=i+1;j<size;j++){
          sum=a[i]+a[j];
@@ -23,7 +23,11 @@ int main() {
              printf("%d %d",i,j);
             //  printf(a[i],a[j]);
          }
-     }   
+         else{
+             continue;
+             }
+        }   
     }
+     printf("The sum is greater than 9 so there's nothing to print");
     return 0;
 }
