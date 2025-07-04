@@ -26,7 +26,7 @@ for(int i=0;i<size;i++){
     }
 }
 
-printf("The sorted array is : \n");
+printf("\n The sorted array is : \n");
 for(int i=0; i<size; i++){
     printf("%d ",arr[i]);
 }
