@@ -32,3 +32,36 @@ for(int i=0; i<size; i++){
 }
     return 0;
 }
+// 
+// Online C compiler to run C program online
+// #include <stdio.h>
+
+// int main() {
+//     int arr[20],i,j,size;
+//     printf("Enter the size: ");
+//     scanf("%d",&size);
+    
+//     printf("enter the values of array :");
+//     for(int i=0;i<size;i++){
+//     scanf("%d",&arr[i]);
+//     }
+     
+//     printf("\nThe entered values are :");
+//     for(int i=0;i<size;i++){
+//     printf(" %d ",arr[i]);
+//     }
+//     printf("\nThe sorted array in descending is :");
+//     for(int i=0;i<size;i++){
+//         for(int j=0;j<size;j++){
+//             if(arr[j+1]>arr[j]){
+//                 int temp=arr[j+1];
+//                 arr[j+1]=arr[j];
+//                 arr[j]=temp;
+//             }
+//         }
+//     }
+//     for(int i=0;i<size;i++){
+//         printf(" %d ",arr[i]);
+//     }
+//     return 0;
+// }
