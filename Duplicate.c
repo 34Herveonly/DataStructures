@@ -58,7 +58,7 @@ int main() {
     }
 
     // Optional: print message if no duplicates were found
-    // printf("No duplicates found in the array.");
+    printf("No duplicates found in the array.");
 
     return 0;
 }
