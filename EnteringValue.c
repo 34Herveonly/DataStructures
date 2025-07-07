@@ -5,7 +5,7 @@
 int main() {
 int arr[50],size,num,pos;
 
-printf("Enter the size of array: ");
+printf("Enter the size of array: ");    
 scanf("%d",&size);
 
 if(size>50){

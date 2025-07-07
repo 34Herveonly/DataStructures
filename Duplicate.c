@@ -47,7 +47,7 @@ int main() {
 
         // If the slot is already used and matches our current value, it's a duplicate
         if(map[index].is_present && map[index].key == current) {
-            printf("Found the duplicate: %d\n", current);
+            printf("\n  the duplicated value is: %d\n", current);
             // We could break or return if we only care about the first duplicate
             // return 0;
         }
