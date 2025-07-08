@@ -62,3 +62,45 @@ int main() {
 
     return 0;
 }
+
+/*
+
+During my revision of how to use hashmaps to find the duplicated values from our array i implented a simple logic where you're initially given an array and you traverse through it to find any duplicates from that array if found its printed.
+
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 1000
+
+typedef struct{
+    int key;
+    int is_present;
+}hashmap;
+
+int hash(int key){
+    return abs(key)%MAX;
+}
+int main() {
+ 
+int arr[]={1,3,4,5,6,3,11,45,75,2};
+int size=sizeof(arr)/sizeof(arr[0]);
+
+hashmap map[MAX]={0};
+
+for(int i=0;i<size;i++){
+    int current=arr[i];
+    int index=hash(current);
+    
+    if(map[index].is_present && map[index].key==current){
+        printf("The dupicated value is: %d",current);
+    }
+    
+    map[index].key=current;
+    map[index].is_present=1;
+}
+
+
+    return 0;
+}
+
+*/
