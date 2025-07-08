@@ -1,0 +1,1 @@
+// I came up with an idea to check wether an input value is an even value or odd by first asking the user to input that value we eould like to check then we divide it by 2 and its remainder is zero then its an even else it would be an odd
