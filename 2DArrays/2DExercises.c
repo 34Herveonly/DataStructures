@@ -22,13 +22,17 @@ int main() {
                 int isSquare = 1; // Assume it is a square of 1s
                 
                 // Check the new row and column of the expanding square
+
+                //This logic below is responsible for adding a new row and column to our previously existed squares of 1 and directly check if the added row and column are made of 1's only in case it finds a zero it will  exclude that particular row or column and keep it as it is   
+
                 for (int x = 0; x < size; x++) {
                     if (farm[i + size - 1][j + x] == 0 || farm[i + x][j + size - 1] == 0) {
                         isSquare = 0; // Not a square
                         break;
                     }
                 }
-                
+
+
                 // If it's still a valid square, update maxSquare
                 if (isSquare) {
                     if (size * size > maxSquare) {
