@@ -46,6 +46,6 @@ int main() {
         }
     }
     
-    printf("Largest Square of 1s: %d\n", maxSquare);
+    printf("Largest Square of 1s will be made of : %d\n values", maxSquare);
     return 0;
 }
