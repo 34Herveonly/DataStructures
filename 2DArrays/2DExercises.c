@@ -49,3 +49,49 @@ int main() {
     printf("Largest Square of 1s will be made of : %d\n values", maxSquare);
     return 0;
 }
+
+/*
+#include <stdio.h>
+
+int main() {
+    int farm[5][5] = {
+        {1, 1, 0, 1, 1},
+        {1, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {0, 1, 1, 1, 1},
+        {1, 0, 1, 1, 1}
+    };
+    int maxSquare=0;
+    int row=sizeof(farm)/sizeof(farm[0]);
+    int col=sizeof(farm[0])/sizeof(farm[0][0]);
+
+    for(int i=0;i<row;i++){
+    for(int j=0;j<col;j++){
+        int size=1;
+
+        while(i+size<=row && j+size<=col){
+            int isSquare=1;
+
+            for(int x=0;x<size;x++){
+            if(farm[i+size-1][j+x]==0 && farm[i+x][j+size-1]){
+                int isSquare=0;
+                    break;
+                }
+            }
+                if(isSquare){
+                    if(size*size>maxSquare){
+                        maxSquare=size*size;
+                        }
+                        size++;
+                    }
+                        else{
+                        break
+                    }
+        
+                }
+    
+      }
+    printf("Largest Square of 1s will be made of : %d\n values", maxSquare);
+        return 0;
+    }   
+*/
