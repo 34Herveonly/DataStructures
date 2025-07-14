@@ -42,3 +42,47 @@ int main() {
 
     return 0;
 }
+
+/*
+
+in the comments below the codes we had previously i just added a more simpler logic where user didn't even add the input we had it initially and then we calculated the highest sum possible and then used it to find the biggest avg possible
+
+#include <stdio.h>
+
+int main() {
+    int size = 9; 
+    float Avg, maxAvg = -1.0;
+    
+    int arr[5][5]={1,2,3,4,5
+    ,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+    ,21,22,23,24,25};
+
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+    
+    for(int i=0;i<5-2;i++){
+        for(int j=0;j<5-2;j++){
+            
+            int sum=0;
+            
+            for(int x=i;x<i+3;x++){
+                for(int y=j;y<j+3;y++){
+                    sum+=arr[x][y];
+                }
+            }
+            Avg=(float)sum/size;
+            
+            if(Avg>maxAvg){
+                maxAvg=Avg;
+            }
+        }
+    }
+        printf(" The maximum Avg overall is: %2f",maxAvg);
+    return 0;
+}
+
+*/
