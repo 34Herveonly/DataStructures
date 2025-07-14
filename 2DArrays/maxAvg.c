@@ -45,7 +45,8 @@ int main() {
 
 /*
 
-in the comments below the codes we had previously i just added a more simpler logic where user didn't even add the input we had it initially and then we calculated the highest sum possible and then used it to find the biggest avg possible
+in the comments below the codes we had previously i just added a more simpler logic where user didn't even add the input we had it initially and then we calculated the highest sum possible and then used it to find the biggest avg possible  
+
 
 #include <stdio.h>
 
@@ -64,11 +65,14 @@ int main() {
         printf("\n");
     }
     
+since we're tryna find the biggest avg of a 3x3 square so thats why we use this logic below to make sure we stay in bounds that satisfy the 3x3 and do not exceed 5 becaus its our array's limit
+    
     for(int i=0;i<5-2;i++){
         for(int j=0;j<5-2;j++){
             
             int sum=0;
-            
+This below is responsible for traversing through our newly created 3x3 square and make the additions and ot starts at position x=i so that it wont go beyond our 3x3 bounds that's why it should be less than i+3 
+
             for(int x=i;x<i+3;x++){
                 for(int y=j;y<j+3;y++){
                     sum+=arr[x][y];
