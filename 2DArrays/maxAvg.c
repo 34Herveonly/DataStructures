@@ -53,6 +53,7 @@ in the comments below the codes we had previously i just added a more simpler lo
 int main() {
     int size = 9; 
     float Avg, maxAvg = -1.0;
+    int maxRow=0,maxCol=0;
     
     int arr[5][5]={1,2,3,4,5
     ,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
@@ -82,10 +83,19 @@ This below is responsible for traversing through our newly created 3x3 square an
             
             if(Avg>maxAvg){
                 maxAvg=Avg;
+                maxRow=i;
+                maxCol=j;
             }
         }
     }
         printf(" The maximum Avg overall is: %2f",maxAvg);
+        printf("\nFrom This 3x3 array: ");
+        for(int i=maxRow;i<maxRow+3;i++){
+        for(int j=maxCol;j<maxCol+3;j++){
+            printf("%d ",arr[i][j]);
+            }
+            printf("\n");
+        }
     return 0;
 }
 
