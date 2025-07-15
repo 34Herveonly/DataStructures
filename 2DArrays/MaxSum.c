@@ -62,3 +62,64 @@ int main() {
     printf("The maximum sum of our 3x3 Matrix is: %d", maxSum);
     return 0;
 }
+/*
+
+in this newly added lines of codes in comments we revised about maxSum possible of a 3x3 array from a 5x5 given array and then added a new logic that will print that 3x3 which had max sum
+
+#include <stdio.h>
+
+int main() {
+    int maxSum = 0;
+    int maxRow = 0, maxCol = 0;  // To track the top-left index of the max 3x3 submatrix
+
+    int arr[5][5] = {
+        {1, 2, 3, 4, 5},
+        {6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15},
+        {16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25}
+    };
+
+    int row = sizeof(arr) / sizeof(arr[0]);
+    int col = sizeof(arr[0]) / sizeof(arr[0][0]);
+
+    // Print the full array (optional)
+    printf("Our Given Array:\n");
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            printf("%2d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+    
+    for(int i=0;i<row-2;i++){
+        for(int j=0;j<col-2;j++){
+            int sum=0;
+            
+            for(int x=i;x<=i+2;x++){
+                for(int y=j;y<=j+2;y++){
+                    sum+=arr[x][y];
+                }
+            }
+            if(sum>maxSum){
+                maxSum=sum;
+               maxRow=i;
+               maxCol=j;
+            }
+        }
+    }
+    printf("The MaxSum is: %d",maxSum);
+    
+    printf("\nFrom this array: \n");
+    for(int i=maxRow;i<maxRow+3;i++){
+        for(int j=maxCol;j<maxCol+3;j++){
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+
+*/ 
