@@ -101,6 +101,7 @@ int main() {
                     sum+=arr[x][y];
                 }
             }
+            printf("\nThe sum of 3x3 at(%d,%d) is: %d",i,j,sum);
             if(sum>maxSum){
                 maxSum=sum;
                maxRow=i;
@@ -108,7 +109,7 @@ int main() {
             }
         }
     }
-    printf("The MaxSum is: %d",maxSum);
+    printf("\n\nThe MaxSum is: %d",maxSum);
     
     printf("\nFrom this array: \n");
     for(int i=maxRow;i<maxRow+3;i++){
