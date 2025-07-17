@@ -68,50 +68,49 @@ Through this logic i revised about the sliding window logic where i was tryna do
 #include <stdio.h>
 
 int main() {
-    int size = 9;
-    int maxRow = 0, maxCol = 0;  // To track the top-left index of the max 3x3 submatrix
-
     int arr[5][5] = {
         {1, 2, 3, 4, 5},
         {6, 7, 8, 9, 10},
         {11, 12, 13, 14, 15},
         {16, 17, 18, 19, 20},
         {21, 22, 23, 24, 25}
-      };
-      
-        float currentAvg=0.0,maxAvg=0.0;
-        int row = sizeof(arr) / sizeof(arr[0]);
-        int col = sizeof(arr[0]) / sizeof(arr[0][0]);
-        
-    for(int i=0;i<row-2;i++){
-        int sum=0;
-        
-        for(int x=i;x<i+3;x++){
-            for(int y=0;y<3;y++){
-                sum+=arr[x][y];
+    };
+    int size = 9;
+    int row = sizeof(arr) / sizeof(arr[0]);
+    int col = sizeof(arr[0]) / sizeof(arr[0][0]);
+    float currentAvg = 0.0, maxAvg = 0.0;
+
+    for (int i = 0; i < row - 2; i++) {
+        int sum = 0;
+
+        // Initial 3x3 block in the row
+        for (int x = i; x < i + 3; x++) {
+            for (int y = 0; y < 3; y++) {
+                sum += arr[x][y];
             }
         }
-        printf("\nThe sum is: %d",sum);
-        currentAvg=(float)sum/size;
-        if(currentAvg>maxAvg){
-            maxAvg=currentAvg;
+        printf("\nThe sum is: %d", sum);
+        currentAvg = (float)sum / size;
+        if (currentAvg > maxAvg) {
+            maxAvg = currentAvg;
         }
-        
-        for(int j=1;j<col-2;j++){
-            
-            for(int x=i;x<i+3;x++){
-                sum-=arr[x][j-1];
+
+        for (int j = 1; j <= col - 3; j++) {
+            for (int x = i; x < i + 3; x++) {
+                sum -= arr[x][j - 1];   // Remove left col
+                sum += arr[x][j + 2];   // Add new right col
             }
-            for(int x=i;x<i+3;x++){
-                sum+=arr[x][j+2];
-            }
-            currentAvg=(float)sum/size;
-            if(currentAvg>maxAvg){
-                maxAvg=currentAvg;
+
+            printf("\nThe sum is: %d", sum);
+            currentAvg = (float)sum / size;
+            if (currentAvg > maxAvg) {
+                maxAvg = currentAvg;
             }
         }
-    }    
-    printf("\nThe MaxAvg from our array is: %.2f",maxAvg);
- return 0;       
+    }
+
+    printf("\nThe maximum Avg is: %.2f", maxAvg);
+
+    return 0;
 }
 */
