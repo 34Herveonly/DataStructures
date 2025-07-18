@@ -55,5 +55,47 @@ int main() {
 I am going to resolve this same finding the maximum sum question but this time instead of using bruteforce im going to use the sliding window technique which is much faster and avoids re-calculating everything instead it removes the previously existed column and then adds the newy added one without having to re-calculate everything  
 
 
+#include <stdio.h>
+
+int main(){
+int arr[5][5] = {
+        {1, 2, 3, 4, 5},
+        {6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15},
+        {16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25}
+    };
+    int size=9;
+    int maxSum=0;
+
+    for(int i=0;i<5-2;i++){
+        int sum=0;
+
+        for(int x=i;x<i+3;x++){
+          for(int y=0;y<3;y++){
+          sum+=arr[x][y];
+          }
+        }
+          printf("\nThe sum is: %d",sum);
+          if(sum>maxSum){
+            maxSum=sum;
+          }
+    
+          for(int j=1;j<5-2;j++){
+            for(int x=i;x<i+3;x++){
+            sum-=arr[x][j-1];
+            sum+=arr[x][j+2];    
+            }
+         }
+            printf("\nThe sum is: %d",sum);
+            if(sum>maxSum){
+            maxSum=sum;
+            
+        }
+      }
+    printf("\nThe maximum sum is: %d",maxSum);
+      return 0;
+}
+
 
 */ 
