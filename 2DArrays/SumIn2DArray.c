@@ -50,3 +50,10 @@ int main() {
 
     return 0;
 }
+
+/*
+I am going to resolve this same finding the maximum sum question but this time instead of using bruteforce im going to use the sliding window technique which is much faster and avoids re-calculating everything instead it removes the previously existed column and then adds the newy added one without having to re-calculate everything  
+
+
+
+*/ 
