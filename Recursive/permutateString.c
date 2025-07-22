@@ -37,3 +37,39 @@ int main() {
 
     return 0;
 }
+
+/*
+// im going to be tackling the Permutations of a String dsa question which uses recursion and backtracking 
+    #include <stdio.h>
+    #include <string.h>
+    
+
+    int permutate(char word[],int index,int length){
+
+    if(index==length){
+    printf("%s \n",word);
+    }
+    else{
+    for(int i=index;i<length;i++){
+        char temp=word[index];
+        word[index]=word[i];
+        word[i]=temp;
+
+        permutate(word,index+1,length);
+        word[i]=word[index];
+        word[index]=temp;
+        }
+    }
+} 
+    int main(){
+    
+    char word[]="ABC";
+    int index=0;
+    int length=strlen(word);
+
+    permutate(word,index,length);
+
+    
+    }
+
+*/ 
