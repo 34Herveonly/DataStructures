@@ -15,3 +15,11 @@ int main() {
 
     return 0;// terminating our function
 }
+
+/*
+// Just going to take on this factorial recursive exrecise to make sure i recall everything
+
+
+
+
+*/ 
