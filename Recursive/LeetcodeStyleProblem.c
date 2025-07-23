@@ -24,7 +24,7 @@ void print(int nums[], int index, int length, int subset[], int subsetSize) {
     print(nums, index + 1, length, subset, subsetSize);
 }
 
-int main() {
+int main() {    
     int nums[] = {1, 3, 4, 6, 8, 10};
     int length = sizeof(nums) / sizeof(nums[0]);
     int subset[50]; // temp array to build subsets
@@ -33,3 +33,9 @@ int main() {
 
     return 0;
 }
+
+/*
+// Going to make a revision about this leetcode kinda question of printing out all of the possible sub-arrays from our array 
+
+
+*/ 
