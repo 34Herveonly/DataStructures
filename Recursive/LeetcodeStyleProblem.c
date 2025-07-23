@@ -37,5 +37,32 @@ int main() {
 /*
 // Going to make a revision about this leetcode kinda question of printing out all of the possible sub-arrays from our array 
 
+# include <stdio.h>
+
+void print(int arr[],int index,int subset[],int length,int subsetSize){
+
+    if(index==length){
+        printf(" { ");
+        for(int i=0;i<subsetSize;i++){
+            printf("%d ",subset[i]);
+        }
+            printf(" } \n");
+            return;
+    }
+        subset[subsetSize]=arr[index];
+        print(arr,index+1,subset,length,subsetSize+1);
+        
+        // Then backtrack the subsetSize
+        print(arr,index+1,subset,length,subsetSize);
+   
+}
+    int main(){
+     int arr[]={1,3,4,6,7,8};
+     int length=sizeof(arr)/sizeof(arr[0]);
+     int subset[50];
+     int index;
+     
+     print(arr,0,subset,length,0);    
+    }
 
 */ 
