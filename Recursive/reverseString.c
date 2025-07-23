@@ -39,8 +39,32 @@ int main() {
 /*
 // Today im going to be revising about this string reverse using the recursion approach
 
+#include <stdio.h>
+#include <string.h>
 
+void reverse(char word[],int start,int end){
 
+    if(start>=end)return;
+    
+    char temp=word[start];
+    word[start]=word[end];
+    word[end]=temp;
+ 
+    reverse(word,start+1,end-1);
+}
+
+int main(){
+    char word[]="MONEY ON MY MIND";
+    printf("The given sentence is: %s",word);
+    int size=strlen(word);
+    int start;
+    int end;
+
+    reverse(word,0,size-1);
+    printf("The reversed sentence is: %s",word);
+
+    
+}
 
 
 */ 
