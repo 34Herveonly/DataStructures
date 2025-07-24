@@ -62,4 +62,46 @@ int main() {
 // Given a string of digits (from 2 to 9), we want to print all the possible letter combinations that the number could represent — just like the letters on an old phone keypad.
 
 
+#include <stdio.h>
+#include<string.h>
+
+void printCombinations(char *input,int index,char *map[],int length,char combinations[]){
+    if(index==length){
+        combinations[index]='\0';
+        printf("%s\n",combinations);
+        return;
+    }
+    int digit=input[index]-'0';
+    char *letters=map[digit];
+    
+    for(int i=0;letters[i] !='\0';i++){
+        combinations[index]=letters[i];
+        printCombinations(input,index+1,map,length,combinations);
+    }
+}
+
+int main() {
+char *map[] = {
+        "",     // 0
+        "",     // 1
+        "abc",  // 2
+        "def",  // 3
+        "ghi",  // 4
+        "jkl",  // 5
+        "mno",  // 6
+        "pqrs", // 7
+        "tuv",  // 8
+        "wxyz"  // 9
+    };
+    
+    char input[20];
+    printf("Enter the input between(2-9): ");
+    scanf("%s",input);
+    int length=strlen(input);
+    int index;
+    char combinations[20];
+    
+    printCombinations(input,0,map,length,combinations);
+    return 0;
+}
 */ 
