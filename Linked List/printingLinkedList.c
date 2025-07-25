@@ -51,3 +51,9 @@ int main() {
 
     return 0; // Program ends successfully
 }
+
+/*
+// Going to revise about the linked lists and how the values of a linked list are printed but first and foremost we need to know how a needed space is allocated for the values in c using malloc  
+
+
+*/ 
