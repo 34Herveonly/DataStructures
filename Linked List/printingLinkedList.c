@@ -55,5 +55,68 @@ int main() {
 /*
 // Going to revise about the linked lists and how the values of a linked list are printed but first and foremost we need to know how a needed space is allocated for the values in c using malloc  
 
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int data;
+    struct node* next; 
+        };
+
+    void print(struct node* head){
+    struct node* current=head;
+    
+        while(current != NULL){
+        
+          printf("%d ->",current->data);
+
+          current=current->next;
+            }
+
+            printf("NULL\n");
+        }
+
+        int main(){
+        
+        struct node* head=malloc(sizeof(struct node));
+        struct node* first=malloc(sizeof(struct node)); 
+        struct node* second=malloc(sizeof(struct node)); 
+        struct node* third=malloc(sizeof(struct node));
+        struct node* fourth=malloc(sizeof(struct node));
+        struct node* fifth=malloc(sizeof(struct node));
+        struct node* sixth=malloc(sizeof(struct node));
+        struct node* seventh=malloc(sizeof(struct node));
+
+
+        head->data=100;
+        head->next=first;
+
+        first->data=200;
+        first->next=second;
+        
+        second->data=300;
+        second->next=third;
+        
+        third->data=400;
+        third->next=fourth;
+
+        fourth->data=500;
+        fourth->next=fifth;
+
+        fifth->data=600;
+        fifth->next=sixth;
+
+        sixth->data=700;
+        sixth->next=seventh;
+
+        seventh->data=800;
+        seventh->next=NULL;
+
+        printf("These are the values from our linked list.\n");
+
+        print(head);
+        }
+
+        // This here is a linked list,it can be defined as a box which holds the value as well as the address of the next box and this happens by using pointers to hold the adresses of those next boxes! but firstly we use malloc to allocate space in our pc that will be storing those linked lists or simply boxes and then after we call a function that will traverse through our linked list and print the valeus found there.    
 
 */ 
