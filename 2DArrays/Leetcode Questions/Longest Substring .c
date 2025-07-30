@@ -9,6 +9,8 @@
 int lengthOfLongestSubstring(char *s) {
     int n = strlen(s);
 
+    // s used in the logic above is just a name we gave to a pointer that points to the first character of our string, and in C, a string is just an array of characters.
+
     int lastSeen[MAX_CHARS];
     
     // Initialize all characters as not seen yet (-1)
