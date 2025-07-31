@@ -1,47 +1,73 @@
 /*  “Fruit Into Two Baskets – Variant”
  (With One Unlimited Basket + One Limited to 2 Fruits) */
 
- from collections import defaultdict
+#include <stdio.h>
+#include <string.h>
 
-def max_fruits_with_basket_rule(fruits):
-    count = defaultdict(int)
-    start = 0
-    max_len = 0
-    limited_type = -1
-    types = 0
+#define MAX_FRUITS 100005  // Adjust as needed
+#define MAX_TYPES 1001     // Assuming fruit types are integers < 1000
 
-    for end in range(len(fruits)):
-        fruit = fruits[end]
+int maxFruitsWithTwoBaskets(int* fruits, int n) {
+    int count[MAX_TYPES] = {0};  // Frequency map
+    int start = 0, maxLen = 0;
+    int types = 0;               // Current number of fruit types
+    int limitedType = -1;        // The fruit type in Basket B (limited to 2)
 
-        if count[fruit] == 0:
-            types += 1
-        count[fruit] += 1
+    for (int end = 0; end < n; end++) {
+        int fruit = fruits[end];
 
-        # Assign basket B if not set
-        if limited_type == -1 or (fruit != limited_type and count[fruit] <= 2):
-            limited_type = fruit
+        // New fruit type?
+        if (count[fruit] == 0) {
+            types++;
+        }
 
-        # If basket B exceeds its 2-fruit limit or 3rd type appears
-        while types > 2 or (fruit == limited_type and count[fruit] > 2):
-            left_fruit = fruits[start]
-            count[left_fruit] -= 1
-            if count[left_fruit] == 0:
-                types -= 1
-                if left_fruit == limited_type:
-                    limited_type = -1
-                    for f in count:
-                        if count[f] > 0 and count[f] <= 2:
-                            limited_type = f
-                            break
-            start += 1
+        count[fruit]++;
 
-        max_len = max(max_len, end - start + 1)
+        // Assign or update limitedType if needed
+        if (limitedType == -1 || (fruit != limitedType && count[fruit] <= 2)) {
+            limitedType = fruit;
+        }
 
-    return max_len
+        // Now check if this fruit violates Basket B rule
+        while (types > 2 || (fruit == limitedType && count[fruit] > 2)) {
+            int leftFruit = fruits[start];
+            count[leftFruit]--;
+            if (count[leftFruit] == 0) {
+                types--;
+                if (leftFruit == limitedType) {
+                    // Reset limitedType because we just removed it
+                    limitedType = -1;
+                    // Recalculate which remaining fruit might be the new limited one
+                    for (int i = 0; i < MAX_TYPES; i++) {
+                        if (count[i] > 0 && count[i] <= 2) {
+                            limitedType = i;
+                            break;
+                        }
+                    }
+                }
+            }
+            start++; // Shrink window from the left
+        }
 
-# Test input
-fruits = [1, 2, 2, 1, 3, 1, 1, 2]
-print(max_fruits_with_basket_rule(fruits))  # Should print the correct max length
+        int windowLen = end - start + 1;
+        if (windowLen > maxLen) {
+            maxLen = windowLen;
+        }
+    }
+
+    return maxLen;
+}
+
+// Main for testing
+int main() {
+    int fruits[] = {1, 2, 2, 1, 3, 1, 1, 2};
+    int size = sizeof(fruits) / sizeof(fruits[0]);
+
+    int result = maxFruitsWithTwoBaskets(fruits, size);
+    printf("Maximum number of fruits collected: %d\n", result);
+
+    return 0;
+}
 
 /*
 
