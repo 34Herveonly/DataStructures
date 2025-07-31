@@ -51,3 +51,13 @@ int main() {
 
     return 0;
 }
+
+/*
+
+Patterns You’ll Use:
+Concept	                  Why?
+Sliding Window->	       To scan through the array efficiently
+Hash Map / Array->	     To track how many of each fruit type we’re carrying
+Two Pointers->	         One for start of the window, one to expand the end
+
+*/
