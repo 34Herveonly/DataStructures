@@ -60,4 +60,11 @@ Sliding Window->	       To scan through the array efficiently
 Hash Map / Array->	     To track how many of each fruit type we’re carrying
 Two Pointers->	         One for start of the window, one to expand the end
 
+if (count[fruit] == 0)  "Is this fruit new?" → If yes, add it to types and keep counting it.
+
+if (count[leftFruit] == 0)   "Did we fully remove this fruit type from the window?" → If yes, drop it from our arrays/baskets adn after its size iz equal to zero we decrease the types from 3 back to 2.
+
+// so here what we were trying to do was to traverse through our array and find 2 unique types of fruits that will be added to our baskets and as we traverse and add those fruits if we encounter any new type of fruit that we didnt previously have in our baskets we will go back and remove some type of fruits from the left until when we remain with only 2 types of fruits in our baskets because our condition says atmost 2 types of fruits! and while we do that we will track the max length we traverelled collecting other fruits with solely 2 types of fruits in our baskets without meeting a new type and thats what we will return      
+
+
 */
