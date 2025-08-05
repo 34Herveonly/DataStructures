@@ -84,4 +84,17 @@ int main() {
 /* We use a growing and shrinking window with 2 frequency maps: one for the goal characters (t) and one for the current window in s.
 We expand the window with the right pointer and shrink it with the left pointer to find the smallest window that contains all characters of t.
 
+Right pointer → expands window
+
+Left pointer → shrinks window
+
+tFreq → tells us what characters we need
+
+windowFreq → shows what we have right now
+
+If windowFreq has all characters from tFreq → we found a valid window
+
+Try to shrink the window as much as possible while still valid
+
+Track the shortest one and return it
 */
